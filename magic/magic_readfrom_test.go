@@ -160,10 +160,105 @@ func TestMagicReadFromBadMagic(t *testing.T) {
 					if expected, actual := string(test.Magic[:len(p)]), string(p); expected != actual {
 						t.Errorf("For test #%d, expected %#v, but actually got %#v.", testNumber, expected, actual)
 						continue
-
 					}
 				}
 			}
+		}
+	}
+}
+
+func TestMagicReadFromShort(t *testing.T) {
+
+	var magic Type
+
+	var buffer bytes.Buffer
+
+	if expected, actual := 0, buffer.Len(); expected != actual {
+		t.Errorf("Expected %d, but actually got %d.", expected, actual)
+		return
+	}
+
+	// We hard code the "magic" here, because theoretically `Read()` could modify
+	// the memory space containing the magic.
+	buffer.WriteByte(7)
+	buffer.WriteByte('o')
+	buffer.WriteByte('k')
+	buffer.WriteByte('a')
+	buffer.WriteByte('n')
+	buffer.WriteByte('e')
+	buffer.WriteByte('r')
+	buffer.WriteByte('o')
+
+	n64, err := magic.ReadFrom(&buffer)
+	if nil != err {
+		t.Errorf("Did not expect an error, but did not actually get one: (%T) %q", err, err)
+		return
+	}
+
+	{
+		// We hard code the expected length here, because theoretically `Read()` could modify
+		// the memory space containing the magic, so len(magic) could be wrong.
+		const expected = int64(8)
+
+		if actual := n64; expected != actual {
+			t.Errorf("Expected %d, but actually got %d.", expected, actual)
+			return
+		}
+	}
+}
+
+func TestMagicReadFromShortLong(t *testing.T) {
+
+	var magic Type
+
+	var buffer bytes.Buffer
+
+	if expected, actual := 0, buffer.Len(); expected != actual {
+		t.Errorf("Expected %d, but actually got %d.", expected, actual)
+		return
+	}
+
+	// We hard code the "magic" here, because theoretically `Read()` could modify
+	// the memory space containing the magic.
+	buffer.WriteByte(7)
+	buffer.WriteByte('o')
+	buffer.WriteByte('k')
+	buffer.WriteByte('a')
+	buffer.WriteByte('n')
+	buffer.WriteByte('e')
+	buffer.WriteByte('r')
+	buffer.WriteByte('o')
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(1)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(0)
+	buffer.WriteByte(255)
+	buffer.WriteByte(223)
+
+	n64, err := magic.ReadFrom(&buffer)
+	if nil != err {
+		t.Errorf("Did not expect an error, but did not actually get one: (%T) %q", err, err)
+		return
+	}
+
+	{
+		// We hard code the expected length here, because theoretically `Read()` could modify
+		// the memory space containing the magic, so len(magic) could be wrong.
+		const expected = int64(8)
+
+		if actual := n64; expected != actual {
+			t.Errorf("Expected %d, but actually got %d.", expected, actual)
+			return
 		}
 	}
 }
