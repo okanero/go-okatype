@@ -47,6 +47,6 @@ The okatype_length.Type is a way of representing this "length" in a Golang struc
 		// ...
 	}
 
-MOST LIKELY YOU WOULD NOT CREATE YOUR OWN okatype_length.Type, BUT INSTEAD USE IT FROM AN okatype_length.Type.
+MOST LIKELY YOU WOULD NOT CREATE YOUR OWN okatype_length.Type, BUT INSTEAD USE IT FROM AN okatype_datum.Type.
 */
 package okatype_length
