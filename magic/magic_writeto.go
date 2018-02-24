@@ -5,6 +5,7 @@ import (
 	"io"
 )
 
+// WriteTo makes okatype_magic.Type fit the io.WriterTo interface.
 func (receiver Type) WriteTo(w io.Writer) (int64, error) {
 	const doesNotMatter = int64(-1)
 
