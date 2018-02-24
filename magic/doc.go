@@ -1,5 +1,5 @@
 /*
-Package okatype_magic provides the okatype_magic.Type type.
+Package okatype_magic (i.e., Okanero type magic) provides the okatype_magic.Type type.
 
 With the Okanero protocol, there is a message-oriented layer to it.
 

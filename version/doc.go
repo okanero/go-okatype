@@ -1,5 +1,5 @@
 /*
-Package okatype_version provides the okatype_version.Type and okatype_version.NullableType types.
+Package okatype_version (i.e., Okanero type version) provides the okatype_version.Type and okatype_version.NullableType types.
 
 With the Okanero protocol, there is a message-oriented layer to it.
 
