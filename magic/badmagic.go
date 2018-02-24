@@ -21,7 +21,7 @@ type BadMagic interface {
 	error
 	BadMagic()
 
-	// Reader returns a Reader that can be used to get the "bad magic" that what was read in
+	// Reader returns a Reader that can be used to get the "bad magic" that what was read in.
 	//
 	// So, for example, what would have been expected to have been read in would have been:
 	//
