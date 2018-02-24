@@ -236,7 +236,7 @@ func TestMagicReadFromShortLong(t *testing.T) {
 	buffer.WriteByte(0)
 	buffer.WriteByte(0)
 	buffer.WriteByte(0)
-	buffer.WriteByte(223)
+	buffer.WriteByte(203)
 	buffer.WriteByte(255)
 	buffer.WriteByte(0)
 	buffer.WriteByte(0)
