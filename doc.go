@@ -20,5 +20,23 @@ A serialized Okranero datum might look like:
 		// ...
 	}
 
+Datum Struct
+
+When working with a Okanero datum in Golang code, likely would would want to load this type into
+a okatype_datum.Type.
+
+(Also, likely, would will not have this data in the form of a []byte, but instead will have it
+coming from an io.Reader. So....)
+
+For example:
+
+	var r io.Reader
+	
+	// ...
+	
+	var datum okatype_datum.Type
+	
+	n64, err := datum.ReadFrom(r)
+
 */
 package okatype
