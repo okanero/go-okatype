@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestMagicWriteToWriter(t *testing.T) {
+func TestMagicWriterTo(t *testing.T) {
 
 	var datum Type
 
