@@ -12,7 +12,7 @@ func (receiver Type) WriteTo(w io.Writer) (int64, error) {
 		return doesNotMatter, errNilWriter
 	}
 
-	// we do this (i.e., copy the values over to a local buffer) to prevent the possibility of `w.Write()` writing to the `magic` global.
+	// We do this (i.e., copy the values over to a local buffer) to prevent the possibility of `w.Write()` writing to the `magic` global.
 	//
 	// We are OK with using the constant "8" here, because it is a compile time error if the length of `buffer` and the `magic` global don't match.
 	var buffer [8]byte = magic
