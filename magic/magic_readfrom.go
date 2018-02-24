@@ -5,6 +5,7 @@ import (
 	"io"
 )
 
+// ReadFrom makes okatype_magic.Type fit the io.ReaderFrom interface.
 func (receiver *Type) ReadFrom(r io.Reader) (int64, error) {
 
 	const doesNotMatter = int64(-1)
