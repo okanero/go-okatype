@@ -36,6 +36,15 @@ So, continuing our example, if we include the magic also, the first 16 bytes in 
 		203,255,0,0,0,0,0,0,          // <-- version, as a little-endian 64 bit integer.
 	}
 
+The okatype_version.Type is a way of representing this "version" in a Golang struct. I.e.,
+
+	struct Datum {
+		Magic   okatype_magic.Type
+		Version okatype_version.Type
+
+		// ...
+	}
+
 MOST LIKELY YOU WOULD NOT CREATE YOUR OWN okatype_version.Type, BUT INSTEAD USE IT FROM AN okatype_datum.Type.
 */
 package okatype_version
