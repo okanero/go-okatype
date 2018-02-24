@@ -3,6 +3,8 @@
 Package **okatype** (i.e., **Okanero type**) provides basic types used for implementing the Okanero protocol,
 in the Go programming language.
 
+The Okanero protocol is a blockchain-like protocol.
+
 
 ## Documention
 
