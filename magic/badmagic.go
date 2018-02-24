@@ -20,6 +20,18 @@ import (
 type BadMagic interface {
 	error
 	BadMagic()
+
+	// Reader returns a Reader that can be used to get the "bad magic" that what was read in
+	//
+	// So, for example, what would have been expected to have been read in would have been:
+	//
+	//	[8]byte{7,'o','k','a','n','e','r','o'}
+	//
+	// But what was actually instead read in was:
+	//
+	//	[8]byte{'<','?','x','m','l',' ','v','e'}
+	//
+	// This might be useful if you want to create an informative error message.
 	Reader() Reader
 }
 
