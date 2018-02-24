@@ -44,5 +44,7 @@ the the okatype_magic.Type into a io.Writer.
 
 Also with okatype_magic.Type, the okatype_magic.Type.ReadFrom() method allows one to validate
 the "magic" (i.e., "magic number") coming from an io.Reader.
+
+MOST LIKELY YOU WOULD NOT CREATE YOUR OWN okatype_magic.Type, BUT INSTEAD USE IT FROM AN okatype_datum.Type.
 */
 package okatype_magic
