@@ -27,7 +27,7 @@ You can think of this as the "native" format of an Okanero Datum.
 Okanero Datum Struct
 
 When working with an Okanero Datum in Golang code (you probably wouldn't want to work with the serialized Okanero Datum
-directly, but instead), likely would want to load this type into an okatype_datum.Type.
+directly, but instead), likely would want to load this kind of data into an okatype_datum.Type.
 
 (Also, from the Golang code, likely, you would will not have this serialized Okanero Datum data in the form of a []byte,
 but instead will have it coming from an io.Reader. So....)
