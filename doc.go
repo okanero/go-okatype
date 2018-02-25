@@ -44,7 +44,7 @@ For example:
 
 You can then more easily work with the different aspects of a Okanero Datum more easily. For example:
 
-	fmt.Printf("Okanero Datum version = %d", datum.Version)
+	fmt.Printf("Okanero Datum version = %d \n", datum.Version)
 
 */
 package okatype
