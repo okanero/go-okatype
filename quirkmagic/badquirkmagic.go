@@ -25,7 +25,7 @@ type BadQuirkMagic interface {
 	//
 	// So, for example, what would have been expected to have been read in would have been:
 	//
-	//	[8]byte{7,'o','k','a','n','e','r','o'}
+	//	[8]byte{7,'d','o','t','a','b','l','e'}
 	//
 	// But what was actually instead read in was:
 	//
