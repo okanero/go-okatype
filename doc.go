@@ -9,7 +9,7 @@ The Okanero protocol calls its messages "Datum".
 
 (You could probably safely conflate an Okanero Datum with a "Block" in a "Blockchain".)
 
-Serialized Datum
+Serialized Okanero Datum
 
 A serialized Okanero Datum might look like:
 
@@ -24,7 +24,7 @@ You may receive a serialized Okanero Datum over a network communication, or stor
 
 You can think of this as the "native" format of an Okanero Datum.
 
-Datum Struct
+Okanero Datum Struct
 
 When working with an Okanero Datum in Golang code (you probably wouldn't want to work with the serialized Okanero Datum
 directly, but instead), likely would want to load this type into an okatype_datum.Type.
