@@ -35,9 +35,9 @@ To understand this:
 
 • What is sent over or received from the network is an Okanero Message.
 
-• What is endorsed into a Blockchain is a Okanero Block. This is what an agent acting as an endorser would create. (In other related technologies, you might call "endorsers": "miners" or "stakers".)
+• What is endorsed into a Blockchain is an Okanero Block. This is what an agent acting as an endorser would create. (In other related technologies, you might call "endorsers": "miners" or "stakers".)
 
-• What is created by the author is a Okanero Datum. This is what would-be endorsers would try to turn into a Okanero Block.
+• What is created by the author is an Okanero Datum. This is what would-be endorsers would try to turn into an Okanero Block.
 
 • Payload is where the the author would assert any information the author wishes to assert. (Ex: if the payload was an event, then it might have a "name" field (ex: "name"="FOOD_EATEN"), and a "version" field (ex: "verion"="1.0.0"), and possible some other information (ex: "calories"="240", "sodium"="10g").)
 
@@ -118,14 +118,14 @@ For example:
 	
 	n64, err := message.ReadFrom(r)
 
-You can then more easily work with the different aspects of a Okanero Message more easily. For example:
+You can then more easily work with the different aspects of an Okanero Message more easily. For example:
 
 	fmt.Printf("Okanero Message version = %d \n", message.Version)
 
 
 Okanero Block
 
-A Okanero Message wraps an Okanero Block.
+An Okanero Message wraps an Okanero Block.
 
 (You could (probably safely) conflate an Okanero Block with a "Block" in a "Blockchain".)
 
@@ -305,7 +305,7 @@ For example:
 	
 	n64, err := datum.ReadFrom(r)
 
-You can then more easily work with the different aspects of a Okanero Datum more easily. For example:
+You can then more easily work with the different aspects of an Okanero Datum more easily. For example:
 
 	fmt.Printf("Okanero Datum version = %d \n", datum.Version)
 
