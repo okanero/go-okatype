@@ -5,13 +5,10 @@ import (
 	"github.com/okanero/go-okatype/blockhash"
 	"github.com/okanero/go-okatype/count"
 	"github.com/okanero/go-okatype/interaction"
-	"github.com/okanero/go-okatype/length"
-	"github.com/okanero/go-okatype/magic"
 	"github.com/okanero/go-okatype/nonce"
 	"github.com/okanero/go-okatype/payload"
 	"github.com/okanero/go-okatype/signature"
 	"github.com/okanero/go-okatype/time"
-	"github.com/okanero/go-okatype/version"
 )
 
 type Type struct {
