@@ -187,7 +187,7 @@ When serialized into a []byte, an Okanero Message can look like:
 We will go into more detail about Okanero Datum shortly.)
 
 
-Serialized Okanero Datum
+Okanero Datum
 
 A serialized Okanero Datum might look like:
 
@@ -291,32 +291,5 @@ A serialized Okanero Datum might look like:
 		0x40,0x41,0xba,0xe1,0xe0,0x63,0x9f,0xb1, //
 		0xcf,0x1a,0x98,0x0b,0x28,0xae,0x55,0xb0, //
 	}
-
-You may receive a serialized Okanero Datum over a network communication, or stored in (or as part of) a file.
-
-You can think of this as the "native" format of an Okanero Datum.
-
-Okanero Datum Struct
-
-When working with an Okanero Datum in Golang code (you probably wouldn't want to work with the serialized Okanero Datum
-directly, but instead), likely would want to load this kind of data into an okatype_datum.Type.
-
-(Also, from the Golang code, likely, you would will not have this serialized Okanero Datum data in the form of a []byte,
-but instead will have it coming from an io.Reader. So....)
-
-For example:
-
-	var r io.Reader
-	
-	// ...
-	
-	var datum okatype_datum.Type
-	
-	n64, err := datum.ReadFrom(r)
-
-You can then more easily work with the different aspects of an Okanero Datum more easily. For example:
-
-	fmt.Printf("Okanero Datum version = %d \n", datum.Version)
-
 */
 package okatype
