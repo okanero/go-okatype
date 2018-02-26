@@ -5,13 +5,13 @@ With the Okanero protocol, there is a message-oriented layer to the protocol.
 In the Golang code, there are 4 major types that you should start with, when
 dealing with the Okanero protocol's message-oriented layer:
 
-• okatype.Message
+• okatype_message.Type
 
-• okatype.Block
+• okatype_block.Type
 
-• okatype.Datum
+• okatype_datum.Type
 
-• okatype.Payload
+• okatype_payload.Type
 
 The way that these relate to each other are:
 
@@ -30,6 +30,42 @@ The way that these relate to each other are:
 	┃  ┃  ┗━━━━━━━━━━━━━━━━━┛  ┃  ┃
 	┃  ┗━━━━━━━━━━━━━━━━━━━━━━━┛  ┃
 	┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
+You can see nesting with okatype_message.Type as:
+
+	package okatype_message
+
+	type Type struct {
+		// ...
+
+		Block okatype_block.Type
+
+		// ...
+	}
+
+And can see nesting with okatype_message.Type as:
+
+	package okatype_block
+
+	type Type struct {
+		// ...
+
+		Datum okatype_datum.Type
+
+		// ...
+	}
+
+And can see nesting with okatype_datum.Type as:
+
+	package okatype_datum
+
+	type Type struct {
+		// ...
+
+		Payload okatype_payload.Type
+
+		// ...
+	}
 
 
 Okanero Message
