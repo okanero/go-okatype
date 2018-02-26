@@ -15,13 +15,13 @@ import (
 )
 
 type Type struct {
-	Genesis okatype_hash.Type
-	Prev    okatype_hash.Type
+	Genesis okatype_blockhash.Type
+	Prev    okatype_blockhash.Type
 	Count   okatype_count.Type
 
-	Lateral1 okatype_hash.Type
-	Lateral2 okatype_hash.Type
-	Lateral3 okatype_hash.Type
+	Lateral1 okatype_blockhash.Type
+	Lateral2 okatype_blockhash.Type
+	Lateral3 okatype_blockhash.Type
 
 	Payload okatype_payload.Type
 
