@@ -13,6 +13,24 @@ dealing with the Okanero protocol's message-oriented layer:
 
 • okatype.Payload
 
+The way that these relate to each other are:
+
+	┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+	┃           Message           ┃
+	┃                             ┃
+	┃  ┏━━━━━━━━━━━━━━━━━━━━━━━┓  ┃
+	┃  ┃         Block         ┃  ┃
+	┃  ┃                       ┃  ┃
+	┃  ┃  ┏━━━━━━━━━━━━━━━━━┓  ┃  ┃
+	┃  ┃  ┃      Datum      ┃  ┃  ┃
+	┃  ┃  ┃                 ┃  ┃  ┃
+	┃  ┃  ┃  ┏━━━━━━━━━━━┓  ┃  ┃  ┃
+	┃  ┃  ┃  ┃  Payload  ┃  ┃  ┃  ┃
+	┃  ┃  ┃  ┗━━━━━━━━━━━┛  ┃  ┃  ┃
+	┃  ┃  ┗━━━━━━━━━━━━━━━━━┛  ┃  ┃
+	┃  ┗━━━━━━━━━━━━━━━━━━━━━━━┛  ┃
+	┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+
 
 Okanero Message
 
