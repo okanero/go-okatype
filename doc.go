@@ -1,6 +1,14 @@
 /*
+Package okatype (i.e., Okanero type) provides basic types used for implementing the Okanero protocol, for the Go programming language.
+
+
+Overview
 
 With the Okanero protocol, there is a message-oriented layer to the protocol.
+
+An Okanero Message is represented, in the Golang code, by: okatype_message.Type.
+
+However, it is okatype_message.Type makes more sense in the context of three other types.
 
 In the Golang code, there are 4 major types that you should start with, when
 dealing with the Okanero protocol's message-oriented layer:
@@ -30,18 +38,6 @@ The way that these relate to each other are:
 	┃  ┃  ┗━━━━━━━━━━━━━━━━━┛  ┃  ┃
 	┃  ┗━━━━━━━━━━━━━━━━━━━━━━━┛  ┃
 	┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
-To understand this:
-
-• What is sent over or received from the network is an Okanero Message.
-
-• What is endorsed into a Blockchain is an Okanero Block. This is what an agent acting as an endorser would create. (In other related technologies, you might call "endorsers": "miners" or "stakers".)
-
-• What is created by the author is an Okanero Datum. This is what would-be endorsers would try to turn into an Okanero Block.
-
-• Payload is where the the author would assert any information the author wishes to assert. (Ex: if the payload was an event, then it might have a "name" field (ex: "name"="FOOD_EATEN"), and a "version" field (ex: "verion"="1.0.0"), and possible some other information (ex: "calories"="240", "sodium"="10g").)
-
-
 
 You can see nesting with okatype_message.Type as:
 
@@ -78,6 +74,16 @@ And with okatype_datum.Type as:
 
 		// ...
 	}
+
+To understand this:
+
+• What is sent over or received from the network is an Okanero Message.
+
+• What is endorsed into a Blockchain is an Okanero Block. This is what an agent acting as an endorser would create. (In other related technologies, you might call "endorsers": "miners" or "stakers".)
+
+• What is created by the author is an Okanero Datum. This is what would-be endorsers would try to turn into an Okanero Block.
+
+• Payload is where the the author would assert any information the author wishes to assert. (Ex: if the payload was an event, then it might have a "name" field (ex: "name"="FOOD_EATEN"), and a "version" field (ex: "verion"="1.0.0"), and possible some other information (ex: "calories"="240", "sodium"="10g").)
 
 
 Okanero Message
