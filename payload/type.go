@@ -1,6 +1,6 @@
 package okatype_payload
 
-type Payload struct {
+type Type struct {
 	Name string
 	Version string
 
