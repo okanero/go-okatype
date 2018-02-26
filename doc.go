@@ -2,6 +2,18 @@
 
 With the Okanero protocol, there is a message-oriented layer to the protocol.
 
+In the Golang code, there are 4 major types that you should start with, when
+dealing with the Okanero protocol's message-oriented layer:
+
+• okatype.Message
+
+• okatype.Block
+
+• okatype.Datum
+
+• okatype.Payload
+
+
 Okanero Message
 
 An Okanero Message is represented by okatype_message.Type.
