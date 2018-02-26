@@ -2,8 +2,8 @@ package okatype_datum
 
 import (
 	"github.com/okanero/go-okatype/agent"
+	"github.com/okanero/go-okatype/blockhash"
 	"github.com/okanero/go-okatype/count"
-	"github.com/okanero/go-okatype/hash"
 	"github.com/okanero/go-okatype/interaction"
 	"github.com/okanero/go-okatype/length"
 	"github.com/okanero/go-okatype/magic"
