@@ -34,6 +34,33 @@ And the Okanero Network will ignore the endorser's block.
 MOST LIKELY YOU WOULD NOT CREATE YOUR OWN okatype_nonce.Type, BUT INSTEAD USE IT FROM AN okatype_datum.Type OR AN okatype_block.Type.
 
 
+Usage
+
+Example usage might be something like:
+
+	var datum okatype_datum.Type
+	
+	// ...
+	
+	 var nonce [64]byte
+	
+	// ...
+	
+	datum.Nonce = okatype_nonce.Some(nonce)
+
+Or:
+
+	var block okatype_block.Type
+	
+	// ...
+	
+	 var nonce [64]byte
+	
+	// ...
+	
+	block.Nonce = okatype_nonce.Some(nonce)
+
+
 References
 
 • "Hashcash - A Denial of Service Counter-Measure", by Adam Back (2002) http://www.hashcash.org/hashcash.pdf
