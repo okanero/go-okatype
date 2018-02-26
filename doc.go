@@ -1,26 +1,69 @@
 /*
-Package okatype (i.e., Okanero type) provides basic types used for implementing the Okanero protocol.
 
-With the Okanero protocol, there is a message-oriented layer to it.
+With the Okanero protocol, there is a message-oriented layer to the protocol.
 
-The Okanero protocol calls its messages "Datum".
+Okanero Message
 
-(In Golang, we can think of serialized Okanero Datum as a []byte.)
+An Okanero Message is represented by okatype_message.Type.
 
-(You could probably safely conflate an Okanero Datum with a "Block" in a "Blockchain".)
+When serialized into a []byte, an Okanero Message can look like:
+
+	[]byte{
+		  7,  'o', 'k', 'a', 'n', 'e', 'r', 'o', // <-- magic, as a Pascal-string.
+		  1,   0,   0,   0,   0,   0,   0,   0,  // <-- version, as a little-endian 64 bit (8 byte) integer.
+		  7,  'm', 'a', 'i', 'n', 'n', 'e', 't', // <-- network, as a Pascal-string.
+		255, 108,   1,   0,   0,   0,   0,   0,  // <-- length, as a little-endian 64 bit (8 byte) integer.
+
+		//  ... Okanero Block ...
+	}
+
+(Note the nested inside of the Okanero Message is an Okanero Block, which will be described shortly.)
+
+You may receive a serialized Okanero Message over a network communication, or stored in (or as part of) a file.
+
+You can think of this as the "native" format of an Okanero Message.
+
+When working with an Okanero Message in Golang code (you probably wouldn't want to work with the serialized Okanero Message
+directly, but instead), likely would want to load this kind of data into an okatype_message.Type.
+
+(Also, from the Golang code, likely, you would will not have this serialized Okanero Message data in the form of a []byte,
+but instead will have it coming from an io.Reader. So....)
+
+For example:
+
+	var r io.Reader
+	
+	// ...
+	
+	var message okatype_message.Type
+	
+	n64, err := message.ReadFrom(r)
+
+You can then more easily work with the different aspects of a Okanero Message more easily. For example:
+
+	fmt.Printf("Okanero Message version = %d \n", message.Version)
+
+
+Okanero Block
+
+A Okanero Message wraps an Okanero Block.
+
+(You could (probably safely) onflate an Okanero Block with a "Block" in a "Blockchain".)
+
 
 Serialized Okanero Datum
 
 A serialized Okanero Datum might look like:
 
 	[]byte{
-		   7, 'o', 'k', 'a', 'n', 'e', 'r', 'o', // <-- magic, as a Pascal-string.
+		  7,  'o', 'k', 'a', 'n', 'e', 'r', 'o', // <-- magic, as a Pascal-string.
 
-		   1,  0,   0,   0,   0,   0,   0,   0,  // <-- version, as a little-endian 64 bit (8 byte) integer.
+		  1,   0,   0,   0,   0,   0,   0,   0,  // <-- version, as a little-endian 64 bit (8 byte) integer.
 
-		   7, 'm', 'a', 'i', 'n', 'n', 'e', 't', // <-- network, as a Pascal-string.
+		  7,  'm', 'a', 'i', 'n', 'n', 'e', 't', // <-- network, as a Pascal-string.
 
-		  64,  0,   0,   0,   0,   0,   0,   0,  // <-- genesis hash length, as a little-endian 64 bit (8 byte) integer.
+		255, 108,   1,   0,   0,   0,   0,   0,  // <-- length, as a little-endian 64 bit (8 byte) integer.
+
 
 		0x39,0x2e,0x40,0xed,0x3e,0x6f,0x67,0x13, // <-- genesis hash, as a little-endian 512 bit (64 byte) integer.
 		0xae,0x6d,0xc1,0x83,0xa7,0xed,0x5d,0x9d, //
