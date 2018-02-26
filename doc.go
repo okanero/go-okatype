@@ -17,7 +17,8 @@ When serialized into a []byte, an Okanero Message can look like:
 		//  ... Okanero Block ...
 	}
 
-(Note the nested inside of the Okanero Message is an Okanero Block, which will be described shortly.)
+(Note the nested Okanero Block inside of the Okanero Message.
+We will go into more detail about Okanero Blocks shortly.)
 
 You may receive a serialized Okanero Message over a network communication, or stored in (or as part of) a file.
 
@@ -48,7 +49,7 @@ Okanero Block
 
 A Okanero Message wraps an Okanero Block.
 
-(You could (probably safely) onflate an Okanero Block with a "Block" in a "Blockchain".)
+(You could (probably safely) conflate an Okanero Block with a "Block" in a "Blockchain".)
 
 
 Serialized Okanero Datum
