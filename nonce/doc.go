@@ -32,5 +32,11 @@ Without an appropriate nonce, an Okanero Block is NOT considered valid.
 And the Okanero Network will ignore the endorser's block.
 
 MOST LIKELY YOU WOULD NOT CREATE YOUR OWN okatype_nonce.Type, BUT INSTEAD USE IT FROM AN okatype_datum.Type OR AN okatype_block.Type.
+
+
+References
+
+• "Hashcash - A Denial of Service Counter-Measure", by Adam Back (2002) http://www.hashcash.org/hashcash.pdf
+
 */
 package okatype_nonce
