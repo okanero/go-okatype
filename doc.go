@@ -90,6 +90,9 @@ Okanero Message
 
 An Okanero Message is represented by okatype_message.Type.
 
+An Okanero Message is what you would send over or receive from the network.
+An Okanero Message is also what you might save to or read from a file.
+
 When serialized into a []byte, an Okanero Message can look like:
 
 	[]byte{
