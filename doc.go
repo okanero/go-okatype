@@ -83,7 +83,7 @@ To understand this:
 
 • What is created by the author is an Okanero Datum. This is what would-be endorsers would try to turn into an Okanero Block.
 
-• Payload is where the the author would assert any information the author wishes to assert. (Ex: if the payload was an event, then it might have a "name" field (ex: "name"="FOOD_EATEN"), and a "version" field (ex: "verion"="1.0.0"), and possible some other information (ex: "calories"="240", "sodium"="10g").)
+• Payload is where the the author would assert any information the author wishes to assert. (Ex: if the payload was an event, then it might have a "name" field (ex: "name"="FOOD_EATEN"), and a "version" field (ex: "verion"="1.0.0"), and possibly some other information (ex: "calories"="240", "sodium"="10g").)
 
 
 Okanero Message
