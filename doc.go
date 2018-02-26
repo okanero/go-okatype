@@ -8,7 +8,7 @@ With the Okanero protocol, there is a message-oriented layer to the protocol.
 
 An Okanero Message is represented, in the Golang code, by: okatype_message.Type.
 
-However, it is okatype_message.Type makes more sense in the context of three other types.
+However, okatype_message.Type makes more sense in the context of three other types.
 
 In the Golang code, there are 4 major types that you should start with, when
 dealing with the Okanero protocol's message-oriented layer:
