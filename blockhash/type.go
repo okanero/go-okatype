@@ -1,4 +1,4 @@
-package okatype_endorser
+package okatype_blockhash
 
 type Type struct {
 	loaded bool
