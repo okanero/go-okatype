@@ -1,6 +1,18 @@
 /*
 Package okatype_nonce (i.e., Okanero type length) provides the okatype_nonce.Type.
 
+There are 2 different nonce that exist in a Okanero Message:
+
+• #1: there is a nonce that in okatype_datum.Type, and
+
+• #2: there is a nonce that in okatype_block.Type.
+
+Each of these nonce are discovered by different agents:
+
+• #1: the nonce in okatype_datum.Type is discovered by the author (agent), and
+
+• #2: the nonce in okatype_block.Type is discovered by the endorser (agent).
+
 In the context of the okatype_datum.Type and okatype_block.Type, the nonce is used to:
 
 • help reduce the impact of certain kinds of attack,
