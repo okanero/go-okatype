@@ -43,7 +43,7 @@ You can see nesting with okatype_message.Type as:
 		// ...
 	}
 
-And can see nesting with okatype_message.Type as:
+And with okatype_message.Type as:
 
 	package okatype_block
 
@@ -55,7 +55,7 @@ And can see nesting with okatype_message.Type as:
 		// ...
 	}
 
-And can see nesting with okatype_datum.Type as:
+And with okatype_datum.Type as:
 
 	package okatype_datum
 
