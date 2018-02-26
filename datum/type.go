@@ -16,13 +16,14 @@ type Type struct {
 	Prev    okatype_blockhash.Type
 	Count   okatype_count.Type
 
+	Interaction okatype_interaction.Type
+
 	Lateral1 okatype_blockhash.Type
 	Lateral2 okatype_blockhash.Type
 	Lateral3 okatype_blockhash.Type
 
 	Payload okatype_payload.Type
 
-	Interaction     okatype_interaction.Type
 	Time            okatype_time.Type
 	Author          okatype_agent.Type
 	AuthorSignature okatype_signature.Type
