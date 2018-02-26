@@ -5,6 +5,7 @@ import (
 	"github.com/okanero/go-okatype/datum"
 	"github.com/okanero/go-okatype/nonce"
 	"github.com/okanero/go-okatype/signature"
+	"github.com/okanero/go-okatype/time"
 	"github.com/okanero/go-okatype/trace"
 )
 
