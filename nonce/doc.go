@@ -21,4 +21,4 @@ And the Okanero Network will ignore the endorser's block.
 
 MOST LIKELY YOU WOULD NOT CREATE YOUR OWN okatype_nonce.Type, BUT INSTEAD USE IT FROM AN okatype_datum.Type OR A okatype_block.Type.
 */
-package okatype_length
+package okatype_nonce
