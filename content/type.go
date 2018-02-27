@@ -1,6 +1,9 @@
 package okatype_content
 
 import (
+	"github.com/okanero/go-okatype/length"
+	"github.com/okanero/go-okatype/pascalstring"
+
 	"io"
 )
 
@@ -11,5 +14,5 @@ type Type struct {
 
 	Type    okatype_pascalstring.Type
 	Length  okatype_length.Type
-	Data    interface{io.WriterTo ; io.ReaderTo}
+	Data    interface{io.WriterTo ; io.ReaderFrom}
 }
