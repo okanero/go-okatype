@@ -3,10 +3,10 @@ package okatype_datum
 import (
 	"github.com/okanero/go-okatype/agent"
 	"github.com/okanero/go-okatype/blockhash"
+	"github.com/okanero/go-okatype/content"
 	"github.com/okanero/go-okatype/count"
 	"github.com/okanero/go-okatype/interaction"
 	"github.com/okanero/go-okatype/nonce"
-	"github.com/okanero/go-okatype/payload"
 	"github.com/okanero/go-okatype/signature"
 	"github.com/okanero/go-okatype/time"
 )
@@ -22,7 +22,7 @@ type Type struct {
 	Lateral2 okatype_blockhash.Type
 	Lateral3 okatype_blockhash.Type
 
-	Payload okatype_payload.Type
+	Content okatype_content.Type
 
 	Time            okatype_time.Type
 	Author          okatype_agent.Type
